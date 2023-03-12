@@ -8,19 +8,50 @@
 :root {
   --color-primary-text: #235ad1;
   --color-primary-bg: #e5710f;
-  --text-primary-size: 10px;
+  --h1-primary-size: 2rem;
+  --all-text-size: 1rem;
+  --img-size: 20rem;
 }
+
+
 
 
 
 /* Основа */
+html {
+  font-size: 30px;
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 780px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 580px) {
+  html {
+  font-size: 5px;
+  }
+}
+
 body {
     font-weight: 300;
-    font-size: var(--text-primary-size);
+    font-size: 10px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     line-height: 140%;
     background-color: var(--color-primary-bg);
 }
+
 
 * {
     -webkit-box-sizing: border-box;
@@ -33,6 +64,7 @@ body {
     margin: 0 auto;
     width: 70%;
 }
+
 
 .accordion {
   margin: 2rem;
@@ -48,7 +80,20 @@ body {
   background-color:#235ad1;
 }
 
+@media (max-width: 1000px) {
+  .accordion:hover .head {
+    background-color: antiquewhite;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .accordion-item {
+  font-size: var(--all-text-size);
   margin-bottom: 0.5rem;
 }
 
@@ -84,9 +129,11 @@ label {
   border: 0.1rem solid #000;
 }
 
+
+
 .accordion-item:hover .accordion-title>.body>.accordion-content>.accordion-img {
-  height: 20rem;
-  width: 20rem;
+  height: var(--img-size);
+  width: var(--img-size);
 }
 
 .arrow {
@@ -98,6 +145,12 @@ label {
   display: inline-block;
   opacity: 0;
   transition: all .5s ease-out;
+}
+
+@media (max-width: 1000px) {
+  .arrow {
+    opacity: 1;
+  }
 }
 
 .accordion-radio:checked ~ .accordion-title>.head>.arrow {
@@ -127,8 +180,8 @@ label {
 }
 
 .accordion-radio:checked + .accordion-title>.body>.accordion-content>.accordion-img {
-  height: 20rem;
-  width: 20rem;
+  height: var(--img-size);
+  width: var(--img-size);
 }
 
 .accordion-img {
@@ -138,3 +191,8 @@ label {
   width: 0rem;
   transition: all .5s ease-out;
 }
+
+@media (min-width: 576px) { /* CSS для экранов размером: 576px – 767px */ }
+@media (min-width: 768px) {  /* CSS для: 768px – 991px */ }
+@media (min-width: 992px) { /* CSS для: 992px – 1119px */ }
+@media (min-width: 1500px) {  /* CSS для экранов больше 1200px */ }
