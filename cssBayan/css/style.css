@@ -1,0 +1,88 @@
+/*Обнуление стилей*/
+@import url(nullstyle.css);
+
+/* Подключение шрифтов */
+@import url(fonts.css);
+
+/* Переменные */
+:root {
+  --color-primary-text: #235ad1;
+  --color-primary-bg: #e5710f;
+  --text-primary-size: 10px;
+}
+
+
+
+/* Основа */
+body {
+    font-weight: 300;
+    font-size: var(--text-primary-size);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    line-height: 140%;
+    background-color: var(--color-primary-bg);
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.accordion-item {
+  /* border: 1px solid #000; */
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion-title:hover {
+  background-color:#235ad1;
+}
+
+.accordion-title:active {
+  background-color:#f4f412;
+}
+
+.accordion-radio {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+
+.accordion-radio:checked ~ .accordion-content {
+  display: block;
+}
+
+.accordion-radio:checked ~ .accordion-title {
+  background-color:#235ad1;
+}
+
+.accordion-radio:checked ~ .accordion-title>span {
+  background-color: red;
+}
+
+.accordion-content {
+  border: 1px solid #000;
+  display: none;
+  padding: 10px;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+}
