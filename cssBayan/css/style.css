@@ -40,32 +40,17 @@ body {
   border: 1px solid #000;
 }
 
-.accordion:hover .accordion-title{
+.accordion:hover .arrow {
+  opacity: 1;
+}
+
+.accordion:hover .head {
   background-color:#235ad1;
 }
 
-
-
-.accordion-item {
-  /* border: 1px solid #000; */
-  margin-bottom: 5px;
+label {
+  display: block;
   cursor: pointer;
-}
-
-.accordion-title {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #000;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.accordion-title:hover {
-  background-color:#235ad1;
-}
-
-.accordion-title:active {
-  background-color:#f4f412;
 }
 
 .accordion-radio {
@@ -76,40 +61,59 @@ body {
   position: absolute;
 }
 
-.accordion-radio:checked ~ .accordion-content {
-  display: block;
+.accordion-title:active .head{
+  background-color:#f4f412;
 }
 
-.accordion-title:hover .accordion-content {
-  display: block;
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  padding: 10px;
+  background-color:antiquewhite;
+  transition: all .5s ease-out;
 }
 
-.accordion-radio:checked ~ .accordion-title {
-  background-color:#235ad1;
+.head:hover + .body {
+  display: block;
 }
 
 .arrow {
-  width: 10px;
-  height: 10px;
+  width: 1rem;
+  height: 1rem;
   background-image: url(../icon/add.svg);
   background-repeat: no-repeat;
-  background-size: 10px 10px;
+  background-size: 1rem 1rem;
   display: inline-block;
   opacity: 0;
+  transition: all .5s ease-out;
 }
-.accordion-radio:checked ~ .accordion-title>.arrow {
+
+.accordion-radio:checked ~ .accordion-title>.head>.arrow {
   background-image: url(../icon/close.svg);
 }
 
-.accordion:hover .arrow {
-  opacity: 1;
+.accordion-item:hover .accordion-title>.head>.arrow {
+  background-image: url(../icon/close.svg);
 }
 
+.accordion-radio:checked ~ .accordion-title>.head {
+  background-color:#235ad1;
+}
 
-.accordion-content {
+.body {
   border: 1px solid #000;
   display: none;
   padding: 10px;
+}
+
+.body:hover {
+  display: block;
+}
+
+.accordion-radio:checked ~ .accordion-title>.body {
+  display: block;
 }
 
 .accordion-img {
@@ -118,4 +122,3 @@ body {
   height: 20rem;
   width: 20rem;
 }
-
