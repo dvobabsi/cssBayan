@@ -1,0 +1,193 @@
+/*Обнуление стилей*/
+@import url(nullstyle.css);
+
+/* Подключение шрифтов */
+@import url(fonts.css);
+
+/* Переменные */
+:root {
+  --color-primary-text: #235ad1;
+  --color-primary-bg: #e5710f;
+  --h1-primary-size: 2rem;
+  --all-text-size: 1rem;
+  --img-size: 20rem;
+}
+
+
+
+
+
+/* Основа */
+html {
+  font-size: 30px;
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 780px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 580px) {
+  html {
+  font-size: 5px;
+  }
+}
+
+body {
+    font-weight: 300;
+    font-size: 10px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    line-height: 140%;
+    background-color: var(--color-primary-bg);
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+
+.accordion {
+  margin: 2rem;
+  padding: 5rem;
+  border: 0.1rem solid #000;
+}
+
+.accordion:hover .arrow {
+  opacity: 1;
+}
+
+.accordion:hover .head {
+  background-color:#235ad1;
+}
+
+@media (max-width: 1000px) {
+  .accordion:hover .head {
+    background-color: antiquewhite;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accordion-item {
+  font-size: var(--all-text-size);
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+.accordion-radio {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+
+.accordion-title:active .head{
+  background-color:#f4f412;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1rem solid #000;
+  padding: 1rem;
+  background-color:antiquewhite;
+  transition: all .5s ease-out;
+}
+
+.head:hover + .body {
+  display: block;
+  border: 0.1rem solid #000;
+}
+
+
+
+.accordion-item:hover .accordion-title>.body>.accordion-content>.accordion-img {
+  height: var(--img-size);
+  width: var(--img-size);
+}
+
+.arrow {
+  width: 1rem;
+  height: 1rem;
+  background-image: url(../icon/add.svg);
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  display: inline-block;
+  opacity: 0;
+  transition: all .5s ease-out;
+}
+
+@media (max-width: 1000px) {
+  .arrow {
+    opacity: 1;
+  }
+}
+
+.accordion-radio:checked ~ .accordion-title>.head>.arrow {
+  background-image: url(../icon/close.svg);
+}
+
+.accordion-item:hover .accordion-title>.head>.arrow {
+  background-image: url(../icon/close.svg);
+}
+
+.accordion-radio:checked ~ .accordion-title>.head {
+  background-color:#235ad1;
+}
+
+.body {
+  display: none;
+}
+
+.body:hover {
+  border: 0.1rem solid #000;
+  display: block;
+}
+
+.accordion-radio:checked ~ .accordion-title>.body {
+  display: block;
+  border: 0.1rem solid #000;
+}
+
+.accordion-radio:checked + .accordion-title>.body>.accordion-content>.accordion-img {
+  height: var(--img-size);
+  width: var(--img-size);
+}
+
+.accordion-img {
+  display: block;
+  margin: 0 auto;
+  height: 0rem;
+  width: 0rem;
+  transition: all .5s ease-out;
+}
