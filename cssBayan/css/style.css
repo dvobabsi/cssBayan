@@ -191,8 +191,3 @@ label {
   width: 0rem;
   transition: all .5s ease-out;
 }
-
-@media (min-width: 576px) { /* CSS для экранов размером: 576px – 767px */ }
-@media (min-width: 768px) {  /* CSS для: 768px – 991px */ }
-@media (min-width: 992px) { /* CSS для: 992px – 1119px */ }
-@media (min-width: 1500px) {  /* CSS для экранов больше 1200px */ }
